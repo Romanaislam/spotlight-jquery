@@ -1,0 +1,239 @@
+*{
+  box-sizing: border-box;
+  padding:0;
+  margin: 0;
+}
+.element-item{
+  height: 200px;
+}
+
+.element-item img{
+  padding: 10px 0;
+  max-width: 100%;
+  height: 100%;
+}
+.grid ul{
+
+  position: absolute;
+  top: 0;
+  display:flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  
+
+}
+.grid ul li{
+    padding: 0 3px;
+}
+.grid ul li a{
+  
+  font-size: 20px;
+  border: 1px solid #0d6efd;
+  border-radius: 50%;
+  width: 40px;
+  display:inline-block;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  transition:all .3s ease-in-out;
+}
+.grid img:hover .grid ul li a{
+    
+}
+.mixed{
+    padding:40px;
+}
+/******isotope end****/
+
+.parallax-window{
+  min-height: 50vh;
+}
+header{
+  position:fixed;
+  top:0;
+  z-index: 999;
+  padding: 10px 0;
+  transition: all .3s linear;
+  visibility: hidden;
+  width: 100%;
+}
+header .nav li a{
+   font-size: 22px;
+   display: block;
+   color:#fff;
+   font-weight: 700;
+   font-family: poppins;
+   padding: 20px;
+   text-decoration: none;
+}
+header.stickynav{
+  background-color:green;
+   padding: 0 0;
+   visibility: visible;
+}
+
+.bottom{
+   bottom:0px;
+   right:50px;
+   display: inline-block;
+   position: fixed;
+   text-decoration: none;
+   padding: 10px;
+   font-size: 20px;
+   color:#fff;
+   background-color:green; 
+   visibility: hidden;
+   transition: all .3s linear; 
+
+}
+.bottom:hover {
+    color: #fff !important;
+}
+
+.bottom.topicon{
+    visibility: visible;
+    bottom:50px;
+}
+
+/*******navicon******/
+nav,
+nav ul {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  background:green;
+  padding:0 20px;
+  height:320px;
+}
+nav {
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3);
+  opacity: 0;
+  transform: scale(0.3);
+  transition: all 0.25s;
+}
+nav ul li {
+  
+  width: 100%;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.15);
+  perspective: 0px;
+  transform: rotateX(-90deg) scale(0.5);
+  transition: all 0.3s ease 0.1s;
+  list-style: none;
+}
+
+nav ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+nav ul li a {
+  display:block;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+  text-shadow: 0 0 3px rgba(0,0,0,0.3);
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 100;
+  padding: 15px;
+}
+nav ul li a:hover {
+  background: rgba(255,255,255,0.1);
+  color:#fff;
+}
+#toggle {
+  display: none;
+}
+#toggle + #toggle-btn,
+.nav-icon {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+#toggle + #toggle-btn {
+  height:35px;
+  width: 32px;
+  z-index: 1000;
+  background: rgba(0,0,0,0.05);
+}
+.nav-icon,
+.nav-icon:before,
+.nav-icon:after {
+  position: absolute;
+  height: 3px;
+  width: 30px;
+  margin: 18px 0;
+  z-index: 900;
+  border-radius: 3px;
+  background: #fff;
+  transition: all 0.25s;
+}
+.nav-icon:before {
+  content: "";
+  margin-top: -10px;
+}
+.nav-icon:after {
+  content: "";
+  margin-top: 10px;
+}
+#toggle:checked ~ nav {
+  opacity: 1;
+  transform: scale(1);
+}
+#toggle:checked ~ .nav-icon {
+  background: rgba(255,0,0,0);
+}
+#toggle:checked ~ .nav-icon:before {
+  transform: rotate(-225deg);
+  margin-top: 0;
+}
+#toggle:checked ~ .nav-icon:after {
+  transform: rotate(225deg);
+  margin-top: 0;
+}
+#toggle:checked ~ nav ul li {
+  transform: rotateY(0deg) scale(1);
+}
+/*******navicon end*****/
+/****mouseeffect start***/
+.background{
+     width:100%;
+     height:400px;
+     object-fit: cover;
+}
+.bg{
+    width:100%;
+     height:400px;
+     object-fit: cover;
+}
+/****mouseeffect end***/
+/****spotlight start***/
+
+.spotlight{
+  position: relative;
+  width: 100%;
+  height:100vh;
+  background: url(images/bg.jpg);
+  background-size: cover;
+}
+
+.focus {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+}
+/****spotlight end***/

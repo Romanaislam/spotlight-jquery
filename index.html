@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>isotope</title>
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo2.png">
+
+   </head>
+   <body id="home">
+<header>
+   <div class="container">
+      <div class="row">
+        <div class="col-md-3 ">
+          <ul class="nav">
+            <li><a href="#">LOGO</a></li>
+          </ul>
+        </div> 
+        <div class="col-md-9">
+          <ul class="nav justify-content-end d-none d-md-flex">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Disabled</a>
+            </li>
+          </ul>
+
+
+          <div class="d-md-none">
+           <input type="checkbox" id="toggle"/>
+              <label for="toggle" id="toggle-btn"></label>
+              <div class="nav-icon"></div>
+              <nav data-state="close">
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+
+        </div> 
+      </div>
+   </div>
+</header>
+
+
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md">
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <p>Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Ipsam, pariatur suscipit hic in libero itaque voluptatibus nobis beatae. Saepe, libero?Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Ipsam, pariatur suscipit hic in libero itaque voluptatibus nobis beatae. Saepe, libero?Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Ipsam, pariatur suscipit hic in libero itaque voluptatibus nobis beatae. Saepe, libero?Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Ipsam, pariatur suscipit hic in libero itaque voluptatibus nobis beatae. Saepe, libero?Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Ipsam, pariatur suscipit hic in libero itaque voluptatibus nobis beatae. Saepe, libero?Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Ipsam, pariatur suscipit hic in libero itaque voluptatibus nobis beatae. Saepe, libero?Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Ipsam, pariatur suscipit hic in libero itaque voluptatibus nobis beatae. Saepe, libero?</p>
+      </div>
+      <div class="col-md">
+        <img src="images/bg.jpg" alt="bg" class="background">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md" id="hero-section-a">
+        <img src="images/bg.jpg" alt="bg" class="bg" >
+      </div>
+      <div class="col-md">
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <p>Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Ipsam, pariatur suscipit hic in libero itaque voluptatibus nobis beatae. Saepe, libero?Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Ipsam, pariatur suscipit hic in libero itaque voluptatibus nobis beatae. Saepe, libero?Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Ipsam, pariatur suscipit hic in libero itaque voluptatibus nobis beatae. Saepe, libero?Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Ipsam, pariatur suscipit hic in libero itaque voluptatibus nobis beatae. Saepe, libero?Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Ipsam, pariatur suscipit hic in libero itaque voluptatibus nobis beatae. Saepe, libero?Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Ipsam, pariatur suscipit hic in libero itaque voluptatibus nobis beatae. Saepe, libero?Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Ipsam, pariatur suscipit hic in libero itaque voluptatibus nobis beatae. Saepe, libero?</p>
+      </div>
+    </div>
+    
+  </div>
+
+<section class="spotlight">
+  <div class="container-fluid">
+    <div class="focus"></div>
+  </div>
+</section>
+  
+
+
+<a href="#home" class="bottom">Top</a>
+
+
+<script src="js/jquery-3.5.1.min.js"></script>
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js'></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery-parallax.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js'></script>
+
+
+
+ <script>
+
+  $(document).ready(function(){
+
+    jQuery(function( $ ){
+  
+    var $body=$("body"),
+  $heroA=$("#hero-section-a img");
+  
+  TweenMax.set( $heroA, { transformStyle: 'preserve-3d'  });
+  
+  $body.mousemove(function(e) {
+    
+    var sxPos =  e.pageX / $body.width()  * 100 - 50;
+    var syPos =  e.pageY / $body.height() * 100 - 50;
+    console.log("x:" + sxPos + ", y:" + syPos);
+    TweenMax.to( $heroA, 1, { rotationY: 0.20 * sxPos, rotationX: 0.15 * syPos, rotationZ: '-0.1', transformPerspective:500, transformOrigin:'center center' });
+    
+
+  });
+
+
+});
+    $(window).on('scroll', function(){
+      if($(window).scrollTop() > 100){ 
+        
+        $("header").addClass("stickynav");
+        $(".bottom").addClass("topicon");
+
+      }else{
+         
+         $("header").removeClass("stickynav");
+          $(".bottom").removeClass("topicon");
+
+      }
+
+    });
+
+
+    $( document ).mousemove( function( e ) {
+      $( '.background' ).parallax( -30, e );
+      
+    });
+
+    $(document).mousemove(function(e) {
+    var X = e.pageX;
+    var Y = e.pageY;
+    $(".focus").css(
+      "background",
+      "radial-gradient(circle at " +
+        X +
+        "px " +
+        Y +
+        "px, transparent, #000 30%)"
+    );
+  });
+
+    
+});
+
+
+
+    
+ </script>
+
+   </body>
+   </html>
